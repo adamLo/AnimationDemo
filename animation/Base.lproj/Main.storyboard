@@ -1,24 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="krn-QP-qTi">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="XWb-US-GRB">
+            <objects>
+                <navigationController id="krn-QP-qTi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J9x-jS-V0h">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gKD-ZB-u8r"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y6o-GC-CB3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-607" y="133"/>
+        </scene>
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="animation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqV-RU-2nQ" userLabel="Falling Button">
+                                <rect key="frame" x="135" y="64" width="105" height="30"/>
+                                <state key="normal" title="A falling Button"/>
+                                <connections>
+                                    <action selector="fallingButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IuU-IL-4dg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjL-6w-1VO" userLabel="Next Button">
+                                <rect key="frame" x="292" y="64" width="83" height="30"/>
+                                <state key="normal" title="Next screen"/>
+                                <connections>
+                                    <segue destination="OEs-I8-JUm" kind="show" id="ZRo-dX-ZcP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4R-r8-605" userLabel="SlideUp Button">
+                                <rect key="frame" x="134" y="637" width="107" height="30"/>
+                                <state key="normal" title="Slide up Screen"/>
+                                <connections>
+                                    <action selector="slideUpButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="chb-yO-ANk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixr-El-Y3o" userLabel="FlyAnimation Button">
+                                <rect key="frame" x="144" y="318.5" width="87" height="30"/>
+                                <state key="normal" title="A flying view"/>
+                                <connections>
+                                    <action selector="flyAnimationButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lEY-Au-b09"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="U4R-r8-605" secondAttribute="bottom" id="4ez-IR-qsP"/>
+                            <constraint firstItem="U4R-r8-605" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E9s-lh-flw"/>
+                            <constraint firstItem="lqV-RU-2nQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kg0-Lb-Wp4"/>
+                            <constraint firstItem="ixr-El-Y3o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NaD-F3-fY5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pjL-6w-1VO" secondAttribute="trailing" id="bVf-9D-g41"/>
+                            <constraint firstItem="pjL-6w-1VO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fRH-BN-xNc"/>
+                            <constraint firstItem="lqV-RU-2nQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="h6b-0t-F37"/>
+                            <constraint firstItem="ixr-El-Y3o" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="odV-ib-LnF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="BBE-Hf-VGP"/>
+                    <connections>
+                        <outlet property="fallingButtonTop" destination="h6b-0t-F37" id="ajq-V9-03r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Next View Controller-->
+        <scene sceneID="r9e-7t-SMf">
+            <objects>
+                <viewController storyboardIdentifier="NextViewController" id="OEs-I8-JUm" customClass="NextViewController" customModule="animation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bza-Kg-e7L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hr4-2D-t6Z" userLabel="Dismiss Button">
+                                <rect key="frame" x="160.5" y="318.5" width="54" height="30"/>
+                                <state key="normal" title="Dismiss"/>
+                                <connections>
+                                    <action selector="dismissButtonTouched:" destination="OEs-I8-JUm" eventType="touchUpInside" id="qe8-Xy-rRA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hr4-2D-t6Z" firstAttribute="centerX" secondItem="Bza-Kg-e7L" secondAttribute="centerX" id="dH5-Ng-7bc"/>
+                            <constraint firstItem="Hr4-2D-t6Z" firstAttribute="centerY" secondItem="Bza-Kg-e7L" secondAttribute="centerY" id="hvb-q3-UoZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Vbh-KL-BJg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o0V-Tg-Ts4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="967" y="133"/>
         </scene>
     </scenes>
 </document>
